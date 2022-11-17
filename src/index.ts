@@ -1,5 +1,10 @@
+/**
+ * Secure Middleware Options
+ */
 interface SecureOptions {
+  /** Callback function when xss attack is discovered */
   callback?: () => void;
+  /** Custom response handler if any xss attack is discovered*/
   handleResponseCustom?: (response: any) => void;
 }
 
@@ -56,7 +61,10 @@ export const sanitizeUrl = (
  * const sanitizedString = sanitizeUrl("<script>Hello</script>");
  * ```
  */
-export const secure = ({ callback, handleResponseCustom }: SecureOptions) => {
+export const secure = ({
+  callback,
+  handleResponseCustom,
+}: SecureOptions = {}) => {
   return (req: any, res: any, next: any) => {
     if (
       /(<|%3C)script[\s\S]*?(>|%3E)[\s\S]*?(<|%3C)(\/|%2F)script[\s\S]*?(>|%3E)/.test(

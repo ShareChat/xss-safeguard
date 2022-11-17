@@ -1,4 +1,9 @@
 {
+  "name": "@mohalla-tech/xss-safeguard",
+  "author": "garganurag89",
+  "module": "dist/xss-safeguard.esm.js",
+  "description": "Safeguard for all possible XSS attacks",
+  "homepage": "https://github.com/ShareChat/xss-safeguard#readme",
   "version": "0.1.0",
   "license": "MIT",
   "main": "dist/index.js",
@@ -31,9 +36,6 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "xss-safeguard",
-  "author": "garganurag89",
-  "module": "dist/xss-safeguard.esm.js",
   "size-limit": [
     {
       "path": "dist/xss-safeguard.cjs.production.min.js",
@@ -51,5 +53,19 @@
     "tsdx": "^0.14.1",
     "tslib": "^2.4.1",
     "typescript": "^4.9.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShareChat/xss-safeguard"
+  },
+  "keywords": [
+    "react",
+    "xss",
+    "security",
+    "secure",
+    "sanitization",
+    "javascript",
+    "web",
+    "web-security"
+  ]
 }
