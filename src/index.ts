@@ -57,7 +57,7 @@ export const sanitizeUrl = (
  * @returns Sanitized URL search parameter value
  *
  * @example
- * Prints sanitized string:
+ * Prints search parameters:
  * ```ts
  * const language = getSafeSearchParam(lang);
  * console.log(language)
@@ -66,10 +66,13 @@ export const sanitizeUrl = (
 export const getSafeSearchParam = (
   p: string,
   expression: RegExp = /[`~!$%^*()|+;'"<>{}[\]\\]/gi
-) => {
-  const params = new URLSearchParams(window.location.search);
-  if (!p || !params.has(p)) return null;
-  return sanitizeString(params.get(p) || '', expression);
+): string | null => {
+  if (typeof window !== 'undefined') {
+    const params = new URLSearchParams(window.location?.search);
+    if (!p || !params.has(p)) return null;
+    return sanitizeString(params.get(p) || '', expression);
+  }
+  return null;
 };
 
 /**
