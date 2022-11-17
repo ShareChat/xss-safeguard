@@ -49,6 +49,30 @@ export const sanitizeUrl = (
 ) => (str ? str.replace(expression, '') : str);
 
 /**
+ * Get Sanitized URL search parameters
+ *
+ * @param p - Search parameter name
+ * @param expression - Regex expression for sanitization
+ *
+ * @returns Sanitized URL search parameter value
+ *
+ * @example
+ * Prints sanitized string:
+ * ```ts
+ * const language = getSafeSearchParam(lang);
+ * console.log(language)
+ * ```
+ */
+export const getSafeSearchParam = (
+  p: string,
+  expression: RegExp = /[`~!$%^*()|+;'"<>{}[\]\\]/gi
+) => {
+  const params = new URLSearchParams(window.location.search);
+  if (!p || !params.has(p)) return null;
+  return sanitizeString(params.get(p) || '', expression);
+};
+
+/**
  * Express Middleware for preventing XSS attacks
  *
  * @param options - Options for secure middleware
