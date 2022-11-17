@@ -98,7 +98,7 @@ Reach out to one of the following:
 - garganurag893@gmail.com
 - sumit07sinha@gmail.com
 - himandwivedi@gmail.com
-- rockblog123@gmail.com
+- satishshriwasofficial@gmail.com
 
 ## License
 
