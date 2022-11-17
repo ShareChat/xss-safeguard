@@ -24,7 +24,13 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(compression());
 app.use(bodyParser.json());
-app.use(secure());
+app.use(
+  secure({
+    handleResponseCustom: res => {
+      res.redirect('/error');
+    },
+  })
+);
 
 // Serve generated assets
 app.use(
