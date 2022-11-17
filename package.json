@@ -4,7 +4,7 @@
   "module": "dist/xss-safeguard.esm.js",
   "description": "Safeguard for all possible XSS attacks",
   "homepage": "https://github.com/ShareChat/xss-safeguard#readme",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
