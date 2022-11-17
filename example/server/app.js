@@ -6,6 +6,8 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors = require('cors');
 const compression = require('compression');
+const { secure } = require('@mohalla-tech/xss-safeguard');
+
 require('dotenv').config();
 
 const PORT = 3000;
@@ -22,6 +24,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(compression());
 app.use(bodyParser.json());
+app.use(secure());
 
 // Serve generated assets
 app.use(

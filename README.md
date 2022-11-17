@@ -5,7 +5,7 @@
 
 <h1 align="center">XSS Safeguard</h1>
 
-<p align="center">Performance oriented safequard for all possible XSS attacks
+<p align="center">Performance oriented safeguard for all possible XSS attacks
 </p>
 
 <h6 align="center">Made with ❤️ by developers for developers</h6>
@@ -43,13 +43,13 @@
 ## Installation
 
 ```bash
-$ yarn add @mohalla-tech/xss-safequard
+$ yarn add @mohalla-tech/xss-safeguard
 ```
 
 OR
 
 ```bash
-$ npm i @mohalla-tech/xss-safequard --save
+$ npm i @mohalla-tech/xss-safeguard --save
 ```
 
 ## Features
