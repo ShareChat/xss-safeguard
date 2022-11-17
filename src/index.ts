@@ -57,8 +57,8 @@ export const sanitizeUrl = (
  *
  * @example
  * ```ts
- * const sanitizedString = sanitizeUrl("<script>Hello</script>");
- * const sanitizedString = sanitizeUrl("<script>Hello</script>");
+ * const app = express();
+ * app.use(secure());
  * ```
  */
 export const secure = ({
