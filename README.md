@@ -20,8 +20,8 @@
 </p>
 
 ## Want to show your love?
-<p>Click on 🌟 button.</p>
 
+<p>Click on 🌟 button.</p>
 
 ## Table of Contents
 
@@ -30,8 +30,6 @@
 - [Installation](#installation)
 - [Features](#features)
 - [Usage](#usage)
-- [Props](#props)
-- [Methods](#methods)
 - [FAQ](#faq)
   - [Is it supported and tested both on web and mobile?](#is-it-supported-and-tested-both-on-web-and-mobile)
 - [Contributing](#contributing)
@@ -55,21 +53,65 @@ $ npm i @mohalla-tech/xss-safeguard --save
 
 ## Features
 
+- URL sanitization (With express middleware for SSR) :100:
+- Query Param Sanitization (Client Side) :100:
+- String Sanitization :100:
+- Input Sanitization :100:
 
 ## Usage
 
+Express Middleware for SSR
 
-## Props
+```ts
+import express from 'express';
+import { secure } from '@mohalla-tech/xss-safeguard';
 
+const app = express();
 
-## Methods
+// Default configuration
+app.use(secure());
 
+// Callback on xss attack
+app.use(secure({ callback: () => {} }));
+
+// Custom response handler when xss attack happens
+app.use(
+  secure({
+    handleResponseCustom: res => {
+      res.redirect('/error');
+    },
+  })
+);
+```
+
+Query Param Sanitization
+
+```ts
+import { getSafeSearchParam } from '@mohalla-tech/xss-safeguard';
+
+// URL : https://sharechat.com?language=en
+const sanitizedString = getSafeSearchParam('language');
+console.log(sanitizedString); // en
+
+// URL : https://sharechat.com?language=<script>alert("Hello")</script>
+const sanitizedString = getSafeSearchParam('language');
+console.log(sanitizedString); // scriptalertHello/script
+```
+
+String Sanitization
+
+```ts
+import { sanitizeString } from '@mohalla-tech/xss-safeguard';
+
+const sanitizedString = sanitizeString('<script>Hello</script>');
+console.log(sanitizedString);
+```
 
 ## FAQ
 
 ### Is it supported and tested both on web and mobile?
 
-YES
+Yes
 
 ## Contributing
 
