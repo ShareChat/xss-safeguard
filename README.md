@@ -53,11 +53,14 @@ $ npm i @mohalla-tech/xss-safequard --save
 ```
 
 ## Features
+- Lightweight
+- Treeshaking is supported
 
 
 ## Usage
 
-
+- Helps in creating XSS free websites.
+- Reduce vulnerabilities and block hackers ways to inject malicious content
 ## Props
 
 
