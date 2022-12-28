@@ -65,7 +65,7 @@ export const sanitizeUrl = (
  */
 export const getSafeSearchParam = (
   p: string,
-  expression: RegExp = /[`~!$%^*()|+;'"<>{}[\]\\]/gi
+  expression: RegExp = /[`~!@#$%^&*()|+=?;:'",.<>{}[\]\\/]/gi
 ): string | null => {
   if (typeof window !== 'undefined') {
     const params = new URLSearchParams(window.location?.search);
