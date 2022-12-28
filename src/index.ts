@@ -45,7 +45,7 @@ export const sanitizeString = (
  */
 export const sanitizeUrl = (
   str: string,
-  expression: RegExp = /[`~!$%^*()|+;'"<>{}[\]\\]/gi
+  expression: RegExp = /[`~!$%^*()|+'"<>{}[\]\\]/gi
 ) => (str ? str.replace(expression, '') : str);
 
 /**
