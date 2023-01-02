@@ -38,6 +38,6 @@ describe('Test Sanitize String', () => {
         search: '?answer=<script>alert("Hello")</script>',
       },
     }));
-    expect(getSafeSearchParam('answer')).toEqual('scriptalertHello/script');
+    expect(getSafeSearchParam('answer')).toEqual('scriptalertHelloscript');
   });
 });
