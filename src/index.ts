@@ -45,7 +45,7 @@ export const sanitizeString = (
  */
 export const sanitizeUrl = (
   str: string,
-  expression: RegExp = /[`~!$%^*()|+;'"<>{}[\]\\]/gi
+  expression: RegExp = /[`~!$%^*()|+'"<>{}[\]\\]/gi
 ) => (str ? str.replace(expression, '') : str);
 
 /**
@@ -65,7 +65,7 @@ export const sanitizeUrl = (
  */
 export const getSafeSearchParam = (
   p: string,
-  expression: RegExp = /[`~!$%^*()|+;'"<>{}[\]\\]/gi
+  expression: RegExp = /[`~!@#$%^&*()|+=?;:'",.<>{}[\]\\/]/gi
 ): string | null => {
   if (typeof window !== 'undefined') {
     const params = new URLSearchParams(window.location?.search);
