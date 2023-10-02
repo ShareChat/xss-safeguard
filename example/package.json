@@ -55,7 +55,7 @@
     "@types/express": "^4.17.14",
     "autoprefixer": "^10.4.13",
     "nodemon": "^2.0.20",
-    "postcss": "^8.4.19",
+    "postcss": "^8.4.31",
     "tailwindcss": "^3.2.4"
   }
 }
